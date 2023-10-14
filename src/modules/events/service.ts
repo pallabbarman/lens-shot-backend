@@ -13,6 +13,9 @@ import { EventFilters } from './interface';
 export const insertEvent = async (data: PrismaEvent): Promise<PrismaEvent> => {
     const result = await prisma.event.create({
         data,
+        include: {
+            reviewAndRatings: true,
+        },
     });
 
     return result;
@@ -53,6 +56,9 @@ export const findAllEvents = async (
 
     const result = await prisma.event.findMany({
         where: whereConditions,
+        include: {
+            reviewAndRatings: true,
+        },
         skip,
         take: limit,
         orderBy:
@@ -80,6 +86,9 @@ export const findAllEvents = async (
 export const findEvent = async (id: string): Promise<PrismaEvent | null> => {
     const result = await prisma.event.findUnique({
         where: { id },
+        include: {
+            reviewAndRatings: true,
+        },
     });
 
     return result;
@@ -92,6 +101,9 @@ export const editEvent = async (
     const result = await prisma.event.update({
         where: {
             id,
+        },
+        include: {
+            reviewAndRatings: true,
         },
         data: payload,
     });

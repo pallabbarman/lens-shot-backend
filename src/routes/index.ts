@@ -2,6 +2,7 @@ import { Router } from 'express';
 import authRoutes from 'modules/auth/route';
 import eventRoutes from 'modules/events/route';
 import profileRoutes from 'modules/profile/route';
+import reviewRoutes from 'modules/reviewRating/route';
 import userRoutes from 'modules/users/route';
 
 const router = Router();
@@ -22,6 +23,10 @@ const moduleRoutes = [
     {
         path: '/profile',
         route: profileRoutes,
+    },
+    {
+        path: '/reviews',
+        route: reviewRoutes,
     },
 ];
 
