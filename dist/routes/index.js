@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const route_1 = __importDefault(require("../modules/auth/route"));
 const route_2 = __importDefault(require("../modules/events/route"));
+const route_3 = __importDefault(require("../modules/profile/route"));
 const router = (0, express_1.Router)();
 const moduleRoutes = [
     {
@@ -15,6 +16,10 @@ const moduleRoutes = [
     {
         path: '/events',
         route: route_2.default,
+    },
+    {
+        path: '/profile',
+        route: route_3.default,
     },
 ];
 moduleRoutes.forEach((route) => router.use(route.path, route.route));
