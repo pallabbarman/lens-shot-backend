@@ -7,11 +7,16 @@ const express_1 = require("express");
 const route_1 = __importDefault(require("../modules/auth/route"));
 const route_2 = __importDefault(require("../modules/events/route"));
 const route_3 = __importDefault(require("../modules/profile/route"));
+const route_4 = __importDefault(require("../modules/users/route"));
 const router = (0, express_1.Router)();
 const moduleRoutes = [
     {
         path: '/auth',
         route: route_1.default,
+    },
+    {
+        path: '/users',
+        route: route_4.default,
     },
     {
         path: '/events',
