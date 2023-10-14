@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import z from 'zod';
 
 export const createEventValidation = z.object({
@@ -21,5 +20,16 @@ export const createEventValidation = z.object({
         endDate: z.string({
             required_error: 'Ending Date is required!',
         }),
+    }),
+});
+
+export const updateEventValidation = z.object({
+    body: z.object({
+        title: z.string().optional(),
+        description: z.string().optional(),
+        photo: z.string().optional(),
+        price: z.string().optional(),
+        startDate: z.string().optional(),
+        endDate: z.string().optional(),
     }),
 });
