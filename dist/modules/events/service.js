@@ -10,6 +10,9 @@ const constant_1 = require("./constant");
 const insertEvent = async (data) => {
     const result = await prisma_1.default.event.create({
         data,
+        include: {
+            reviewAndRatings: true,
+        },
     });
     return result;
 };
@@ -40,6 +43,9 @@ const findAllEvents = async (filters, options) => {
     const whereConditions = andConditions.length > 0 ? { AND: andConditions } : {};
     const result = await prisma_1.default.event.findMany({
         where: whereConditions,
+        include: {
+            reviewAndRatings: true,
+        },
         skip,
         take: limit,
         orderBy: sortBy && sortOrder
@@ -64,6 +70,9 @@ exports.findAllEvents = findAllEvents;
 const findEvent = async (id) => {
     const result = await prisma_1.default.event.findUnique({
         where: { id },
+        include: {
+            reviewAndRatings: true,
+        },
     });
     return result;
 };
@@ -72,6 +81,9 @@ const editEvent = async (id, payload) => {
     const result = await prisma_1.default.event.update({
         where: {
             id,
+        },
+        include: {
+            reviewAndRatings: true,
         },
         data: payload,
     });

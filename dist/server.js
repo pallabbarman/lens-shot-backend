@@ -18,7 +18,7 @@ const startServer = async () => {
         process.exit(1);
     };
     const unexpectedErrorHandler = (error) => {
-        console.log(error);
+        console.error(error);
         exitHandler();
     };
     process.on('uncaughtException', unexpectedErrorHandler);

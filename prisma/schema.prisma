@@ -23,6 +23,7 @@ model User {
   createdAt        DateTime          @default(now())
   updatedAt        DateTime          @updatedAt
   reviewAndRatings ReviewAndRating[]
+  bookings         Booking[]
 
   @@map("users")
 }
@@ -33,11 +34,10 @@ model Event {
   description      String
   photo            String
   price            String
-  startDate        DateTime
-  endDate          DateTime
   createdAt        DateTime          @default(now())
   updatedAt        DateTime          @updatedAt
   reviewAndRatings ReviewAndRating[]
+  bookings         Booking[]
 
   @@map("events")
 }
@@ -56,8 +56,31 @@ model ReviewAndRating {
   @@map("reviews_ratings")
 }
 
+model Booking {
+  id         String        @id @default(uuid())
+  userId     String
+  eventId    String
+  startDate  DateTime
+  endDate    DateTime
+  totalPrice String?
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+  status     BookingStatus @default(PENDING)
+  user       User          @relation(fields: [userId], references: [id])
+  event      Event         @relation(fields: [eventId], references: [id])
+
+  @@map("(bookings)")
+}
+
 enum Roles {
   USER
   ADMIN
   SUPER_ADMIN
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  COMPLETED
 }

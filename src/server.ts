@@ -17,7 +17,7 @@ const startServer = async () => {
     };
 
     const unexpectedErrorHandler = (error: unknown) => {
-        console.log(error);
+        console.error(error);
         exitHandler();
     };
 
