@@ -14,12 +14,6 @@ export const createEventValidation = z.object({
         price: z.string({
             required_error: 'Price is required!',
         }),
-        startDate: z.string({
-            required_error: 'Starting Date is required!',
-        }),
-        endDate: z.string({
-            required_error: 'Ending Date is required!',
-        }),
     }),
 });
 
@@ -29,7 +23,5 @@ export const updateEventValidation = z.object({
         description: z.string().optional(),
         photo: z.string().optional(),
         price: z.string().optional(),
-        startDate: z.string().optional(),
-        endDate: z.string().optional(),
     }),
 });
