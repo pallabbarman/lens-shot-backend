@@ -7,6 +7,7 @@ import { createReviewAndRating } from './controller';
 import { createReviewValidation } from './validation';
 
 const router = Router();
+
 router.post(
     '/',
     validateRequest(createReviewValidation),

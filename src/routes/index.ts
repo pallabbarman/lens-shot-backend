@@ -2,6 +2,7 @@ import { Router } from 'express';
 import adminRoutes from 'modules/admin/route';
 import authRoutes from 'modules/auth/route';
 import bookingRoutes from 'modules/booking/route';
+import categoryRoutes from 'modules/category/route';
 import eventRoutes from 'modules/events/route';
 import profileRoutes from 'modules/profile/route';
 import reviewRoutes from 'modules/reviewRating/route';
@@ -17,6 +18,10 @@ const moduleRoutes = [
     {
         path: '/users',
         route: userRoutes,
+    },
+    {
+        path: '/categories',
+        route: categoryRoutes,
     },
     {
         path: '/admins',

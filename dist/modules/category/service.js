@@ -3,28 +3,24 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.removeEvent = exports.editEvent = exports.findEvent = exports.findAllEvents = exports.insertEvent = void 0;
+exports.removeCategory = exports.editCategory = exports.findCategory = exports.findAllCategories = exports.insertCategory = void 0;
 const pagination_1 = __importDefault(require("../../utils/pagination"));
 const prisma_1 = __importDefault(require("../../utils/prisma"));
 const constant_1 = require("./constant");
-const insertEvent = async (data) => {
-    const result = await prisma_1.default.event.create({
+const insertCategory = async (data) => {
+    const result = await prisma_1.default.category.create({
         data,
-        include: {
-            category: true,
-            reviewAndRatings: true,
-        },
     });
     return result;
 };
-exports.insertEvent = insertEvent;
-const findAllEvents = async (filters, options) => {
+exports.insertCategory = insertCategory;
+const findAllCategories = async (filters, options) => {
     const { limit, page, skip, sortBy, sortOrder } = (0, pagination_1.default)(options);
     const { search, ...filterData } = filters;
     const andConditions = [];
     if (search) {
         andConditions.push({
-            OR: constant_1.eventSearchableFields.map((field) => ({
+            OR: constant_1.categorySearchableFields.map((field) => ({
                 [field]: {
                     contains: search,
                     mode: 'insensitive',
@@ -42,11 +38,10 @@ const findAllEvents = async (filters, options) => {
         });
     }
     const whereConditions = andConditions.length > 0 ? { AND: andConditions } : {};
-    const result = await prisma_1.default.event.findMany({
+    const result = await prisma_1.default.category.findMany({
         where: whereConditions,
         include: {
-            category: true,
-            reviewAndRatings: true,
+            events: true,
         },
         skip,
         take: limit,
@@ -56,7 +51,7 @@ const findAllEvents = async (filters, options) => {
                 createdAt: 'desc',
             },
     });
-    const total = await prisma_1.default.event.count({
+    const total = await prisma_1.default.category.count({
         where: whereConditions,
     });
     return {
@@ -68,38 +63,36 @@ const findAllEvents = async (filters, options) => {
         data: result,
     };
 };
-exports.findAllEvents = findAllEvents;
-const findEvent = async (id) => {
-    const result = await prisma_1.default.event.findUnique({
+exports.findAllCategories = findAllCategories;
+const findCategory = async (id) => {
+    const result = await prisma_1.default.category.findUnique({
         where: { id },
         include: {
-            category: true,
-            reviewAndRatings: true,
+            events: true,
         },
     });
     return result;
 };
-exports.findEvent = findEvent;
-const editEvent = async (id, payload) => {
-    const result = await prisma_1.default.event.update({
+exports.findCategory = findCategory;
+const editCategory = async (id, payload) => {
+    const result = await prisma_1.default.category.update({
         where: {
             id,
         },
         include: {
-            category: true,
-            reviewAndRatings: true,
+            events: true,
         },
         data: payload,
     });
     return result;
 };
-exports.editEvent = editEvent;
-const removeEvent = async (id) => {
-    const result = await prisma_1.default.event.delete({
+exports.editCategory = editCategory;
+const removeCategory = async (id) => {
+    const result = await prisma_1.default.category.delete({
         where: {
             id,
         },
     });
     return result;
 };
-exports.removeEvent = removeEvent;
+exports.removeCategory = removeCategory;

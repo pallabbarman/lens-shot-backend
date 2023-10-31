@@ -19,12 +19,6 @@ exports.createEventValidation = zod_1.default.object({
         price: zod_1.default.string({
             required_error: 'Price is required!',
         }),
-        startDate: zod_1.default.string({
-            required_error: 'Starting Date is required!',
-        }),
-        endDate: zod_1.default.string({
-            required_error: 'Ending Date is required!',
-        }),
     }),
 });
 exports.updateEventValidation = zod_1.default.object({
@@ -33,7 +27,5 @@ exports.updateEventValidation = zod_1.default.object({
         description: zod_1.default.string().optional(),
         photo: zod_1.default.string().optional(),
         price: zod_1.default.string().optional(),
-        startDate: zod_1.default.string().optional(),
-        endDate: zod_1.default.string().optional(),
     }),
 });

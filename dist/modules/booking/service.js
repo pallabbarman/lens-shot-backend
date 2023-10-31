@@ -4,8 +4,28 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.removeBooking = exports.editBooking = exports.findBooking = exports.findAllBookings = exports.insertBooking = void 0;
+const apiError_1 = __importDefault(require("../../errors/apiError"));
+const http_status_1 = __importDefault(require("http-status"));
 const prisma_1 = __importDefault(require("../../utils/prisma"));
 const insertBooking = async (data) => {
+    const { eventId, startDate, endDate } = data;
+    const parsedStartDate = new Date(startDate);
+    const parsedEndDate = new Date(endDate);
+    const existingBookings = await prisma_1.default.booking.findMany({
+        where: {
+            eventId,
+        },
+    });
+    const overlappingBooking = existingBookings.find((booking) => {
+        const bookingStartDate = new Date(booking.startDate);
+        const bookingEndDate = new Date(booking.endDate);
+        return ((parsedStartDate >= bookingStartDate && parsedStartDate <= bookingEndDate) ||
+            (parsedEndDate >= bookingStartDate && parsedEndDate <= bookingEndDate) ||
+            (parsedStartDate <= bookingStartDate && parsedEndDate >= bookingEndDate));
+    });
+    if (overlappingBooking) {
+        throw new apiError_1.default(http_status_1.default.CONFLICT, 'Already booked for that time, try another time!');
+    }
     const result = await prisma_1.default.booking.create({
         data,
         include: {
