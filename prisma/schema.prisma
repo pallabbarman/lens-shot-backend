@@ -28,16 +28,28 @@ model User {
   @@map("users")
 }
 
+model Category {
+  id        String   @id @default(uuid())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  events    Event[]
+
+  @@map("categories")
+}
+
 model Event {
   id               String            @id @default(uuid())
   title            String
   description      String
   photo            String
   price            String
+  categoryId       String
   createdAt        DateTime          @default(now())
   updatedAt        DateTime          @updatedAt
   reviewAndRatings ReviewAndRating[]
   bookings         Booking[]
+  category         Category          @relation(fields: [categoryId], references: [id])
 
   @@map("events")
 }
