@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.loginValidation = exports.createUserValidation = void 0;
-const zod_1 = __importDefault(require("zod"));
+var zod_1 = __importDefault(require("zod"));
 exports.createUserValidation = zod_1.default.object({
     body: zod_1.default.object({
         firstName: zod_1.default.string({

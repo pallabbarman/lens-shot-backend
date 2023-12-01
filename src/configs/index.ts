@@ -14,4 +14,5 @@ export default {
         refresh_secret: process.env.JWT_REFRESH_SECRET,
         refresh_secret_expire: process.env.JWT_REFRESH_EXPIRES_IN,
     },
+    token: process.env.USER_TOKEN,
 };

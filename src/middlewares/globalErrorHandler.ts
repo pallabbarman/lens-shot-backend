@@ -9,10 +9,11 @@ import handleZodError from 'errors/handleZodError';
 import { ErrorRequestHandler } from 'express';
 import httpStatus from 'http-status';
 import { IGenericErrorMessage } from 'types/errors';
+import { errorLogger } from 'utils/logger';
 import { ZodError } from 'zod';
 
 const globalErrorHandlers: ErrorRequestHandler = (err, _req, res, _next) => {
-    console.log('globalErrorHandler ~', err);
+    errorLogger.error('globalErrorHandler ~', err);
 
     let statusCode = httpStatus.INTERNAL_SERVER_ERROR as number;
     let message = 'Internal server error!';

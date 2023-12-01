@@ -4,13 +4,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 /* eslint-disable comma-dangle */
-const client_1 = require("@prisma/client");
-const express_1 = require("express");
-const auth_1 = __importDefault(require("../../middlewares/auth"));
-const validateRequest_1 = __importDefault(require("../../middlewares/validateRequest"));
-const controller_1 = require("./controller");
-const validation_1 = require("./validation");
-const router = (0, express_1.Router)();
+var client_1 = require("@prisma/client");
+var express_1 = require("express");
+var auth_1 = __importDefault(require("../../middlewares/auth"));
+var validateRequest_1 = __importDefault(require("../../middlewares/validateRequest"));
+var controller_1 = require("./controller");
+var validation_1 = require("./validation");
+var router = (0, express_1.Router)();
 router.post('/', (0, validateRequest_1.default)(validation_1.createReviewValidation), (0, auth_1.default)(client_1.Roles.ADMIN, client_1.Roles.SUPER_ADMIN, client_1.Roles.USER), controller_1.createReviewAndRating);
-const reviewRoutes = router;
+var reviewRoutes = router;
 exports.default = reviewRoutes;

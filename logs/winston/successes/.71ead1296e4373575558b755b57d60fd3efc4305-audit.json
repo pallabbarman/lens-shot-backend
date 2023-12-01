@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 7
+    },
+    "auditLog": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\successes\\.71ead1296e4373575558b755b57d60fd3efc4305-audit.json",
+    "files": [
+        {
+            "date": 1701412301673,
+            "name": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\successes\\success-2023-12-01-12.log",
+            "hash": "a8a2b090cdf73bc86931cb6bb7e71a6923041b3798f0e06c91b093263bf2ed36"
+        }
+    ],
+    "hashType": "sha256"
+}

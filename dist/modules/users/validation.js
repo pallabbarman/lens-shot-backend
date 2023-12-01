@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateUserValidation = void 0;
 /* eslint-disable import/prefer-default-export */
-const zod_1 = __importDefault(require("zod"));
+var zod_1 = __importDefault(require("zod"));
 exports.updateUserValidation = zod_1.default.object({
     body: zod_1.default.object({
         firstName: zod_1.default.string().optional(),

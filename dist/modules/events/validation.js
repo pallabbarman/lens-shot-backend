@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateEventValidation = exports.createEventValidation = void 0;
-const zod_1 = __importDefault(require("zod"));
+var zod_1 = __importDefault(require("zod"));
 exports.createEventValidation = zod_1.default.object({
     body: zod_1.default.object({
         title: zod_1.default.string({

@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const sendResponse = (res, data) => {
-    const responseData = {
+var sendResponse = function (res, data) {
+    var responseData = {
         statusCode: data.statusCode,
         success: data.success,
         message: data.message || null,
