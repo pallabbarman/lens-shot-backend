@@ -6,9 +6,14 @@
     "auditLog": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\successes\\.71ead1296e4373575558b755b57d60fd3efc4305-audit.json",
     "files": [
         {
-            "date": 1701412301673,
-            "name": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\successes\\success-2023-12-01-12.log",
-            "hash": "a8a2b090cdf73bc86931cb6bb7e71a6923041b3798f0e06c91b093263bf2ed36"
+            "date": 1704607039728,
+            "name": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\successes\\success-2024-01-07-11.log",
+            "hash": "f55e466c733b063052b248b0f5e9703b756bdf52f930a26fa6eadec60b32b1fa"
+        },
+        {
+            "date": 1704607447305,
+            "name": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\successes\\success-2024-01-07-12.log",
+            "hash": "21d99dbf810a2617b1aa9f87242d60c1e1836389677742ffaa09b52d3f4062f8"
         }
     ],
     "hashType": "sha256"

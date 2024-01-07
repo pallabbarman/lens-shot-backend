@@ -6,9 +6,14 @@
     "auditLog": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\errors\\.7a09eb4aaac42d03da7813c726e77ae54acbe6cd-audit.json",
     "files": [
         {
-            "date": 1701412301684,
-            "name": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\errors\\error-2023-12-01-12.log",
-            "hash": "538aa2cf490c44bb55d8bfafe1c8caa7c771d26ad2b8acfb634300d31a4a1cc0"
+            "date": 1704607039740,
+            "name": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\errors\\error-2024-01-07-11.log",
+            "hash": "cac4f654fc9a32497e0f287fb15b958215f410e1f0d46b20fa9a8cb3c8186eb7"
+        },
+        {
+            "date": 1704607447311,
+            "name": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\errors\\error-2024-01-07-12.log",
+            "hash": "77e2d7955fcdff053aa03c2cf67e01b2a4fa57bc99158b17b85016892befcd1d"
         }
     ],
     "hashType": "sha256"

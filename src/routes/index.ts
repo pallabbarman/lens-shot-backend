@@ -3,6 +3,7 @@ import adminRoutes from 'modules/admin/route';
 import authRoutes from 'modules/auth/route';
 import bookingRoutes from 'modules/booking/route';
 import categoryRoutes from 'modules/category/route';
+import contactRoutes from 'modules/contact/route';
 import eventRoutes from 'modules/events/route';
 import profileRoutes from 'modules/profile/route';
 import reviewRoutes from 'modules/reviewRating/route';
@@ -42,6 +43,10 @@ const moduleRoutes = [
     {
         path: '/bookings',
         route: bookingRoutes,
+    },
+    {
+        path: '/contact',
+        route: contactRoutes,
     },
 ];
 

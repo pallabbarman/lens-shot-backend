@@ -34,6 +34,7 @@ model Category {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   events    Event[]
+  blogs     Blog[]
 
   @@map("categories")
 }
@@ -82,6 +83,31 @@ model Booking {
   event      Event         @relation(fields: [eventId], references: [id])
 
   @@map("(bookings)")
+}
+
+model Blog {
+  id         String   @id @default(uuid())
+  img        String
+  title      String
+  content    String
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id])
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@map("(blogs)")
+}
+
+model Contact {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("(contact)")
 }
 
 enum Roles {
