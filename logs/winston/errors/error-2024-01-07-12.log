@@ -25,3 +25,310 @@ Sun Jan 07 2024 12:16:12 [debug] error: globalErrorHandler ~ You are not authori
 Sun Jan 07 2024 12:16:25 [debug] error: globalErrorHandler ~ You are not authorized!
 Sun Jan 07 2024 12:17:35 [debug] error: globalErrorHandler ~ You are not authorized!
 Sun Jan 07 2024 12:18:13 [debug] error: globalErrorHandler ~ You are not authorized!
+Sun Jan 07 2024 12:19:39 [debug] error: globalErrorHandler ~ You are not authorized!
+Sun Jan 07 2024 12:27:10 [debug] error: globalErrorHandler ~ [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "name"
+    ],
+    "message": "Name is required!"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "email"
+    ],
+    "message": "Email is required!"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "subject"
+    ],
+    "message": "Subject is required!"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "message"
+    ],
+    "message": "Message is required!"
+  }
+]
+Sun Jan 07 2024 12:30:59 [debug] error: globalErrorHandler ~ You are not authorized!
+Sun Jan 07 2024 12:30:59 [debug] error: globalErrorHandler ~ You are not authorized!
+Sun Jan 07 2024 12:31:16 [debug] error: globalErrorHandler ~ 
+Invalid `prisma.contact.create()` invocation:
+
+{
+  data: {
++   name: String
+  }
+}
+
+Argument `name` is missing.
+Sun Jan 07 2024 12:33:51 [debug] error: globalErrorHandler ~ [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "name"
+    ],
+    "message": "Name is required!"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "email"
+    ],
+    "message": "Email is required!"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "subject"
+    ],
+    "message": "Subject is required!"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "message"
+    ],
+    "message": "Message is required!"
+  }
+]
+Sun Jan 07 2024 12:39:59 [debug] error: globalErrorHandler ~ [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "name"
+    ],
+    "message": "Name is required!"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "email"
+    ],
+    "message": "Email is required!"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "subject"
+    ],
+    "message": "Subject is required!"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "message"
+    ],
+    "message": "Message is required!"
+  }
+]
+Sun Jan 07 2024 12:44:15 [debug] error: globalErrorHandler ~ [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "name"
+    ],
+    "message": "Name is required!"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "email"
+    ],
+    "message": "Email is required!"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "subject"
+    ],
+    "message": "Subject is required!"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "message"
+    ],
+    "message": "Message is required!"
+  }
+]
+Sun Jan 07 2024 12:46:45 [debug] error: globalErrorHandler ~ [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "name"
+    ],
+    "message": "Name is required!"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "email"
+    ],
+    "message": "Email is required!"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "subject"
+    ],
+    "message": "Subject is required!"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "message"
+    ],
+    "message": "Message is required!"
+  }
+]
+Sun Jan 07 2024 12:52:54 [debug] error: globalErrorHandler ~ [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "name"
+    ],
+    "message": "Name is required!"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "email"
+    ],
+    "message": "Email is required!"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "subject"
+    ],
+    "message": "Subject is required!"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "message"
+    ],
+    "message": "Message is required!"
+  }
+]
+Sun Jan 07 2024 12:58:21 [debug] error: globalErrorHandler ~ [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "name"
+    ],
+    "message": "Name is required!"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "email"
+    ],
+    "message": "Email is required!"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "subject"
+    ],
+    "message": "Subject is required!"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "message"
+    ],
+    "message": "Message is required!"
+  }
+]
