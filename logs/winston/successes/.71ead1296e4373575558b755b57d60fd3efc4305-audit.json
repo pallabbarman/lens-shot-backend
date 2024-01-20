@@ -6,9 +6,9 @@
     "auditLog": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\successes\\.71ead1296e4373575558b755b57d60fd3efc4305-audit.json",
     "files": [
         {
-            "date": 1705756376224,
+            "date": 1705756809567,
             "name": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\successes\\success-2024-01-20-19.log",
-            "hash": "b8465371c9deb2e10fe91c466cbfff3e47e42df09b48fbde0d8fd85334816e19"
+            "hash": "6a66b356a345957274d57a273ec1ebc55af290215fcab66c82229a8bf6731de8"
         }
     ],
     "hashType": "sha256"
