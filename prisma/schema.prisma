@@ -25,6 +25,7 @@ model User {
   reviewAndRatings ReviewAndRating[]
   bookings         Booking[]
   comments         Comment[]
+  feedbacks        Feedback[]
 
   @@map("users")
 }
@@ -111,6 +112,17 @@ model Comment {
   updatedAt DateTime @updatedAt
 
   @@map("comments")
+}
+
+model Feedback {
+  id        String   @id @default(uuid())
+  feedback  String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("feedbacks")
 }
 
 model Contact {
