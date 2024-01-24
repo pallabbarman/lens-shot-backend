@@ -4,6 +4,7 @@ import authRoutes from 'modules/auth/route';
 import blogRoutes from 'modules/blog/route';
 import bookingRoutes from 'modules/booking/route';
 import categoryRoutes from 'modules/category/route';
+import commentRoutes from 'modules/comment/route';
 import contactRoutes from 'modules/contact/route';
 import eventRoutes from 'modules/events/route';
 import feedbackRoutes from 'modules/feedback/route';
@@ -57,6 +58,10 @@ const moduleRoutes = [
     {
         path: '/feedback',
         route: feedbackRoutes,
+    },
+    {
+        path: '/comments',
+        route: commentRoutes,
     },
 ];
 

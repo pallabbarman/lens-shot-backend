@@ -55,7 +55,23 @@ export const findAllBlogs = async (
         where: whereConditions,
         include: {
             category: true,
-            comments: true,
+            comments: {
+                include: {
+                    user: {
+                        select: {
+                            id: true,
+                            firstName: true,
+                            lastName: true,
+                            email: true,
+                            role: true,
+                            contactNo: true,
+                            address: true,
+                            createdAt: true,
+                            updatedAt: true,
+                        },
+                    },
+                },
+            },
         },
         skip,
         take: limit,
@@ -86,7 +102,23 @@ export const findBlog = async (id: string): Promise<Blog | null> => {
         where: { id },
         include: {
             category: true,
-            comments: true,
+            comments: {
+                include: {
+                    user: {
+                        select: {
+                            id: true,
+                            firstName: true,
+                            lastName: true,
+                            email: true,
+                            role: true,
+                            contactNo: true,
+                            address: true,
+                            createdAt: true,
+                            updatedAt: true,
+                        },
+                    },
+                },
+            },
         },
     });
 
@@ -100,7 +132,23 @@ export const editBlog = async (id: string, payload: Partial<Blog>): Promise<Blog
         },
         include: {
             category: true,
-            comments: true,
+            comments: {
+                include: {
+                    user: {
+                        select: {
+                            id: true,
+                            firstName: true,
+                            lastName: true,
+                            email: true,
+                            role: true,
+                            contactNo: true,
+                            address: true,
+                            createdAt: true,
+                            updatedAt: true,
+                        },
+                    },
+                },
+            },
         },
         data: payload,
     });

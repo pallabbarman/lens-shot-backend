@@ -107,7 +107,23 @@ var findAllBlogs = function (filters, options) { return __awaiter(void 0, void 0
                         where: whereConditions,
                         include: {
                             category: true,
-                            comments: true,
+                            comments: {
+                                include: {
+                                    user: {
+                                        select: {
+                                            id: true,
+                                            firstName: true,
+                                            lastName: true,
+                                            email: true,
+                                            role: true,
+                                            contactNo: true,
+                                            address: true,
+                                            createdAt: true,
+                                            updatedAt: true,
+                                        },
+                                    },
+                                },
+                            },
                         },
                         skip: skip,
                         take: limit,
@@ -143,7 +159,23 @@ var findBlog = function (id) { return __awaiter(void 0, void 0, void 0, function
                     where: { id: id },
                     include: {
                         category: true,
-                        comments: true,
+                        comments: {
+                            include: {
+                                user: {
+                                    select: {
+                                        id: true,
+                                        firstName: true,
+                                        lastName: true,
+                                        email: true,
+                                        role: true,
+                                        contactNo: true,
+                                        address: true,
+                                        createdAt: true,
+                                        updatedAt: true,
+                                    },
+                                },
+                            },
+                        },
                     },
                 })];
             case 1:
@@ -163,7 +195,23 @@ var editBlog = function (id, payload) { return __awaiter(void 0, void 0, void 0,
                     },
                     include: {
                         category: true,
-                        comments: true,
+                        comments: {
+                            include: {
+                                user: {
+                                    select: {
+                                        id: true,
+                                        firstName: true,
+                                        lastName: true,
+                                        email: true,
+                                        role: true,
+                                        contactNo: true,
+                                        address: true,
+                                        createdAt: true,
+                                        updatedAt: true,
+                                    },
+                                },
+                            },
+                        },
                     },
                     data: payload,
                 })];
