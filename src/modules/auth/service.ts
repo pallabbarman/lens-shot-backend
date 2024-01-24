@@ -25,7 +25,6 @@ export const insertUser = async (data: User): Promise<Omit<User, 'password'>> =>
             role: true,
             contactNo: true,
             address: true,
-            profileImg: true,
             createdAt: true,
             updatedAt: true,
         },

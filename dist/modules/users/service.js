@@ -105,7 +105,6 @@ var findAllUsers = function (filters, options) { return __awaiter(void 0, void 0
                             role: true,
                             contactNo: true,
                             address: true,
-                            profileImg: true,
                             createdAt: true,
                             updatedAt: true,
                         },
@@ -143,7 +142,6 @@ var findUser = function (id) { return __awaiter(void 0, void 0, void 0, function
                         role: true,
                         contactNo: true,
                         address: true,
-                        profileImg: true,
                         createdAt: true,
                         updatedAt: true,
                     },
@@ -170,7 +168,6 @@ var editUser = function (id, payload) { return __awaiter(void 0, void 0, void 0,
                         role: true,
                         contactNo: true,
                         address: true,
-                        profileImg: true,
                         createdAt: true,
                         updatedAt: true,
                     },
@@ -188,18 +185,6 @@ var removeUser = function (id) { return __awaiter(void 0, void 0, void 0, functi
         switch (_a.label) {
             case 0: return [4 /*yield*/, prisma_1.default.user.delete({
                     where: { id: id },
-                    select: {
-                        id: true,
-                        firstName: true,
-                        lastName: true,
-                        email: true,
-                        role: true,
-                        contactNo: true,
-                        address: true,
-                        profileImg: true,
-                        createdAt: true,
-                        updatedAt: true,
-                    },
                 })];
             case 1:
                 result = _a.sent();

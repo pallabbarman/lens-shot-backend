@@ -74,7 +74,6 @@ var insertUser = function (data) { return __awaiter(void 0, void 0, void 0, func
                             role: true,
                             contactNo: true,
                             address: true,
-                            profileImg: true,
                             createdAt: true,
                             updatedAt: true,
                         },

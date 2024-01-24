@@ -61,7 +61,6 @@ export const findAllUsers = async (
             role: true,
             contactNo: true,
             address: true,
-            profileImg: true,
             createdAt: true,
             updatedAt: true,
         },
@@ -92,7 +91,6 @@ export const findUser = async (id: string): Promise<IUser | null> => {
             role: true,
             contactNo: true,
             address: true,
-            profileImg: true,
             createdAt: true,
             updatedAt: true,
         },
@@ -113,7 +111,6 @@ export const editUser = async (id: string, payload: Partial<User>): Promise<IUse
             role: true,
             contactNo: true,
             address: true,
-            profileImg: true,
             createdAt: true,
             updatedAt: true,
         },
@@ -125,18 +122,6 @@ export const editUser = async (id: string, payload: Partial<User>): Promise<IUse
 export const removeUser = async (id: string): Promise<IUser> => {
     const result = await prisma.user.delete({
         where: { id },
-        select: {
-            id: true,
-            firstName: true,
-            lastName: true,
-            email: true,
-            role: true,
-            contactNo: true,
-            address: true,
-            profileImg: true,
-            createdAt: true,
-            updatedAt: true,
-        },
     });
 
     return result;
