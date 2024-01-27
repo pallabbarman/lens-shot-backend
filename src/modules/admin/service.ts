@@ -7,9 +7,6 @@ export const editRole = async (id: string, role: string): Promise<User> => {
         where: {
             id,
         },
-        include: {
-            reviewAndRatings: true,
-        },
         data: role,
     });
 

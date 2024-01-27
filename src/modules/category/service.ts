@@ -54,7 +54,7 @@ export const findAllCategories = async (
     const result = await prisma.category.findMany({
         where: whereConditions,
         include: {
-            events: true,
+            services: true,
         },
         skip,
         take: limit,
@@ -84,7 +84,7 @@ export const findCategory = async (id: string): Promise<Category | null> => {
     const result = await prisma.category.findUnique({
         where: { id },
         include: {
-            events: true,
+            services: true,
         },
     });
 
@@ -97,7 +97,7 @@ export const editCategory = async (id: string, payload: Partial<Category>): Prom
             id,
         },
         include: {
-            events: true,
+            services: true,
         },
         data: payload,
     });

@@ -11,79 +11,45 @@ datasource db {
 }
 
 model User {
-  id               String            @id @default(uuid())
-  firstName        String
-  lastName         String
-  email            String            @unique
-  password         String
-  role             Roles             @default(USER)
-  contactNo        String            @unique
-  address          String?
-  createdAt        DateTime          @default(now())
-  updatedAt        DateTime          @updatedAt
-  reviewAndRatings ReviewAndRating[]
-  bookings         Booking[]
-  comments         Comment[]
-  feedbacks        Feedback[]
+  id        String     @id @default(uuid())
+  firstName String
+  lastName  String
+  email     String     @unique
+  password  String
+  role      Roles      @default(USER)
+  contactNo String     @unique
+  address   String?
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  comments  Comment[]
+  feedbacks Feedback[]
 
   @@map("users")
 }
 
 model Category {
-  id        String   @id @default(uuid())
+  id        String    @id @default(uuid())
   name      String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  events    Event[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
   blogs     Blog[]
+  services  Service[]
 
   @@map("categories")
 }
 
-model Event {
-  id               String            @id @default(uuid())
-  title            String
-  description      String
-  photo            String
-  price            String
-  categoryId       String
-  createdAt        DateTime          @default(now())
-  updatedAt        DateTime          @updatedAt
-  reviewAndRatings ReviewAndRating[]
-  bookings         Booking[]
-  category         Category          @relation(fields: [categoryId], references: [id])
+model Service {
+  id          String   @id @default(uuid())
+  title       String
+  description String
+  photo       String
+  price       Prices   @default(STANDART)
+  categoryId  String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  category    Category @relation(fields: [categoryId], references: [id])
 
-  @@map("events")
-}
-
-model ReviewAndRating {
-  id        String   @id @default(uuid())
-  review    String
-  rating    Int
-  userId    String
-  eventId   String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  user      User     @relation(fields: [userId], references: [id])
-  event     Event    @relation(fields: [eventId], references: [id])
-
-  @@map("reviews_ratings")
-}
-
-model Booking {
-  id         String        @id @default(uuid())
-  userId     String
-  eventId    String
-  startDate  DateTime
-  endDate    DateTime
-  totalPrice String?
-  createdAt  DateTime      @default(now())
-  updatedAt  DateTime      @updatedAt
-  status     BookingStatus @default(PENDING)
-  user       User          @relation(fields: [userId], references: [id])
-  event      Event         @relation(fields: [eventId], references: [id])
-
-  @@map("bookings")
+  @@map("services")
 }
 
 model Blog {
@@ -140,6 +106,12 @@ enum Roles {
   USER
   ADMIN
   SUPER_ADMIN
+}
+
+enum Prices {
+  STANDART @map("300")
+  PREMIUM  @map("450")
+  PLATINUM @map("750")
 }
 
 enum BookingStatus {

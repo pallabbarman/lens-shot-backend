@@ -2,14 +2,12 @@ import { Router } from 'express';
 import adminRoutes from 'modules/admin/route';
 import authRoutes from 'modules/auth/route';
 import blogRoutes from 'modules/blog/route';
-import bookingRoutes from 'modules/booking/route';
 import categoryRoutes from 'modules/category/route';
 import commentRoutes from 'modules/comment/route';
 import contactRoutes from 'modules/contact/route';
-import eventRoutes from 'modules/events/route';
 import feedbackRoutes from 'modules/feedback/route';
 import profileRoutes from 'modules/profile/route';
-import reviewRoutes from 'modules/reviewRating/route';
+import serviceRoutes from 'modules/services/route';
 import userRoutes from 'modules/users/route';
 
 const router = Router();
@@ -32,20 +30,8 @@ const moduleRoutes = [
         route: adminRoutes,
     },
     {
-        path: '/events',
-        route: eventRoutes,
-    },
-    {
         path: '/profile',
         route: profileRoutes,
-    },
-    {
-        path: '/reviews',
-        route: reviewRoutes,
-    },
-    {
-        path: '/bookings',
-        route: bookingRoutes,
     },
     {
         path: '/contact',
@@ -62,6 +48,10 @@ const moduleRoutes = [
     {
         path: '/comments',
         route: commentRoutes,
+    },
+    {
+        path: '/services',
+        route: serviceRoutes,
     },
 ];
 

@@ -106,7 +106,7 @@ var findAllCategories = function (filters, options) { return __awaiter(void 0, v
                 return [4 /*yield*/, prisma_1.default.category.findMany({
                         where: whereConditions,
                         include: {
-                            events: true,
+                            services: true,
                         },
                         skip: skip,
                         take: limit,
@@ -141,7 +141,7 @@ var findCategory = function (id) { return __awaiter(void 0, void 0, void 0, func
             case 0: return [4 /*yield*/, prisma_1.default.category.findUnique({
                     where: { id: id },
                     include: {
-                        events: true,
+                        services: true,
                     },
                 })];
             case 1:
@@ -160,7 +160,7 @@ var editCategory = function (id, payload) { return __awaiter(void 0, void 0, voi
                         id: id,
                     },
                     include: {
-                        events: true,
+                        services: true,
                     },
                     data: payload,
                 })];

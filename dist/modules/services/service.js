@@ -1,4 +1,8 @@
 "use strict";
+/* eslint-disable operator-linebreak */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable comma-dangle */
+/* eslint-disable object-curly-newline */
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -50,20 +54,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.removeEvent = exports.editEvent = exports.findEvent = exports.findAllEvents = exports.insertEvent = void 0;
+exports.removeService = exports.editService = exports.findService = exports.findAllServices = exports.insertService = void 0;
 var pagination_1 = __importDefault(require("../../utils/pagination"));
 var prisma_1 = __importDefault(require("../../utils/prisma"));
 var constant_1 = require("./constant");
-var insertEvent = function (data) { return __awaiter(void 0, void 0, void 0, function () {
+var insertService = function (data) { return __awaiter(void 0, void 0, void 0, function () {
     var result;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, prisma_1.default.event.create({
+            case 0: return [4 /*yield*/, prisma_1.default.service.create({
                     data: data,
-                    include: {
-                        category: true,
-                        reviewAndRatings: true,
-                    },
                 })];
             case 1:
                 result = _a.sent();
@@ -71,8 +71,8 @@ var insertEvent = function (data) { return __awaiter(void 0, void 0, void 0, fun
         }
     });
 }); };
-exports.insertEvent = insertEvent;
-var findAllEvents = function (filters, options) { return __awaiter(void 0, void 0, void 0, function () {
+exports.insertService = insertService;
+var findAllServices = function (filters, options) { return __awaiter(void 0, void 0, void 0, function () {
     var _a, limit, page, skip, sortBy, sortOrder, search, filterData, andConditions, whereConditions, result, total;
     var _b;
     return __generator(this, function (_c) {
@@ -83,7 +83,7 @@ var findAllEvents = function (filters, options) { return __awaiter(void 0, void 
                 andConditions = [];
                 if (search) {
                     andConditions.push({
-                        OR: constant_1.eventSearchableFields.map(function (field) {
+                        OR: constant_1.serviceSearchableFields.map(function (field) {
                             var _a;
                             return (_a = {},
                                 _a[field] = {
@@ -107,12 +107,8 @@ var findAllEvents = function (filters, options) { return __awaiter(void 0, void 
                     });
                 }
                 whereConditions = andConditions.length > 0 ? { AND: andConditions } : {};
-                return [4 /*yield*/, prisma_1.default.event.findMany({
+                return [4 /*yield*/, prisma_1.default.service.findMany({
                         where: whereConditions,
-                        include: {
-                            category: true,
-                            reviewAndRatings: true,
-                        },
                         skip: skip,
                         take: limit,
                         orderBy: sortBy && sortOrder
@@ -122,7 +118,7 @@ var findAllEvents = function (filters, options) { return __awaiter(void 0, void 
                     })];
             case 1:
                 result = _c.sent();
-                return [4 /*yield*/, prisma_1.default.event.count({
+                return [4 /*yield*/, prisma_1.default.service.count({
                         where: whereConditions,
                     })];
             case 2:
@@ -138,17 +134,13 @@ var findAllEvents = function (filters, options) { return __awaiter(void 0, void 
         }
     });
 }); };
-exports.findAllEvents = findAllEvents;
-var findEvent = function (id) { return __awaiter(void 0, void 0, void 0, function () {
+exports.findAllServices = findAllServices;
+var findService = function (id) { return __awaiter(void 0, void 0, void 0, function () {
     var result;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, prisma_1.default.event.findUnique({
+            case 0: return [4 /*yield*/, prisma_1.default.service.findUnique({
                     where: { id: id },
-                    include: {
-                        category: true,
-                        reviewAndRatings: true,
-                    },
                 })];
             case 1:
                 result = _a.sent();
@@ -156,18 +148,14 @@ var findEvent = function (id) { return __awaiter(void 0, void 0, void 0, functio
         }
     });
 }); };
-exports.findEvent = findEvent;
-var editEvent = function (id, payload) { return __awaiter(void 0, void 0, void 0, function () {
+exports.findService = findService;
+var editService = function (id, payload) { return __awaiter(void 0, void 0, void 0, function () {
     var result;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, prisma_1.default.event.update({
+            case 0: return [4 /*yield*/, prisma_1.default.service.update({
                     where: {
                         id: id,
-                    },
-                    include: {
-                        category: true,
-                        reviewAndRatings: true,
                     },
                     data: payload,
                 })];
@@ -177,12 +165,12 @@ var editEvent = function (id, payload) { return __awaiter(void 0, void 0, void 0
         }
     });
 }); };
-exports.editEvent = editEvent;
-var removeEvent = function (id) { return __awaiter(void 0, void 0, void 0, function () {
+exports.editService = editService;
+var removeService = function (id) { return __awaiter(void 0, void 0, void 0, function () {
     var result;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, prisma_1.default.event.delete({
+            case 0: return [4 /*yield*/, prisma_1.default.service.delete({
                     where: {
                         id: id,
                     },
@@ -193,4 +181,4 @@ var removeEvent = function (id) { return __awaiter(void 0, void 0, void 0, funct
         }
     });
 }); };
-exports.removeEvent = removeEvent;
+exports.removeService = removeService;

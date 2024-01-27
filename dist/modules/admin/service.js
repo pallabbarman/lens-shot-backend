@@ -49,9 +49,6 @@ var editRole = function (id, role) { return __awaiter(void 0, void 0, void 0, fu
                     where: {
                         id: id,
                     },
-                    include: {
-                        reviewAndRatings: true,
-                    },
                     data: role,
                 })];
             case 1:

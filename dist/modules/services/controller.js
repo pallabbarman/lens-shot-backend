@@ -39,7 +39,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteEvent = exports.updateEvent = exports.getEvent = exports.getAllEvents = exports.createEvent = void 0;
+exports.deleteService = exports.updateService = exports.getService = exports.getAllServices = exports.createService = void 0;
 var pagination_1 = __importDefault(require("../../constants/pagination"));
 var http_status_1 = __importDefault(require("http-status"));
 var catchAsync_1 = __importDefault(require("../../utils/catchAsync"));
@@ -47,37 +47,37 @@ var pick_1 = __importDefault(require("../../utils/pick"));
 var sendResponse_1 = __importDefault(require("../../utils/sendResponse"));
 var constant_1 = require("./constant");
 var service_1 = require("./service");
-exports.createEvent = (0, catchAsync_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+exports.createService = (0, catchAsync_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var result;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, (0, service_1.insertEvent)(req.body)];
+            case 0: return [4 /*yield*/, (0, service_1.insertService)(req.body)];
             case 1:
                 result = _a.sent();
                 (0, sendResponse_1.default)(res, {
                     statusCode: http_status_1.default.OK,
                     success: true,
-                    message: 'New event created successfully!',
+                    message: 'New service added successfully!',
                     data: result,
                 });
                 return [2 /*return*/];
         }
     });
 }); });
-exports.getAllEvents = (0, catchAsync_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+exports.getAllServices = (0, catchAsync_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var filters, options, result;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                filters = (0, pick_1.default)(req.query, constant_1.eventFilterableFields);
+                filters = (0, pick_1.default)(req.query, constant_1.serviceFilterableFields);
                 options = (0, pick_1.default)(req.query, pagination_1.default);
-                return [4 /*yield*/, (0, service_1.findAllEvents)(filters, options)];
+                return [4 /*yield*/, (0, service_1.findAllServices)(filters, options)];
             case 1:
                 result = _a.sent();
                 (0, sendResponse_1.default)(res, {
                     statusCode: http_status_1.default.OK,
                     success: true,
-                    message: 'Events is retrieved successfully!',
+                    message: 'Services is retrieved successfully!',
                     meta: result.meta,
                     data: result.data,
                 });
@@ -85,60 +85,60 @@ exports.getAllEvents = (0, catchAsync_1.default)(function (req, res) { return __
         }
     });
 }); });
-exports.getEvent = (0, catchAsync_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+exports.getService = (0, catchAsync_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var id, result;
     var _a;
     return __generator(this, function (_b) {
         switch (_b.label) {
             case 0:
                 id = (_a = req.params) === null || _a === void 0 ? void 0 : _a.id;
-                return [4 /*yield*/, (0, service_1.findEvent)(id)];
+                return [4 /*yield*/, (0, service_1.findService)(id)];
             case 1:
                 result = _b.sent();
                 (0, sendResponse_1.default)(res, {
                     statusCode: http_status_1.default.OK,
                     success: true,
-                    message: 'Event is retrieved successfully!',
+                    message: 'Service is retrieved successfully!',
                     data: result,
                 });
                 return [2 /*return*/];
         }
     });
 }); });
-exports.updateEvent = (0, catchAsync_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+exports.updateService = (0, catchAsync_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var id, result;
     var _a;
     return __generator(this, function (_b) {
         switch (_b.label) {
             case 0:
                 id = (_a = req.params) === null || _a === void 0 ? void 0 : _a.id;
-                return [4 /*yield*/, (0, service_1.editEvent)(id, req.body)];
+                return [4 /*yield*/, (0, service_1.editService)(id, req.body)];
             case 1:
                 result = _b.sent();
                 (0, sendResponse_1.default)(res, {
                     statusCode: http_status_1.default.OK,
                     success: true,
-                    message: 'Event is updated successfully!',
+                    message: 'Service is updated successfully!',
                     data: result,
                 });
                 return [2 /*return*/];
         }
     });
 }); });
-exports.deleteEvent = (0, catchAsync_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+exports.deleteService = (0, catchAsync_1.default)(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var id, result;
     var _a;
     return __generator(this, function (_b) {
         switch (_b.label) {
             case 0:
                 id = (_a = req.params) === null || _a === void 0 ? void 0 : _a.id;
-                return [4 /*yield*/, (0, service_1.removeEvent)(id)];
+                return [4 /*yield*/, (0, service_1.removeService)(id)];
             case 1:
                 result = _b.sent();
                 (0, sendResponse_1.default)(res, {
                     statusCode: http_status_1.default.OK,
                     success: true,
-                    message: 'Event deleted successfully!',
+                    message: 'Service deleted successfully!',
                     data: result,
                 });
                 return [2 /*return*/];

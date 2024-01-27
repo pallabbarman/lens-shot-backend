@@ -2,30 +2,27 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable comma-dangle */
 /* eslint-disable object-curly-newline */
-import { Prisma, Event as PrismaEvent } from '@prisma/client';
+
+import { Prisma, Service } from '@prisma/client';
 import { IPaginationOptions } from 'types/pagination';
 import { IGenericResponse } from 'types/response';
 import calculatePagination from 'utils/pagination';
 import prisma from 'utils/prisma';
-import { eventSearchableFields } from './constant';
-import { EventFilters } from './interface';
+import { serviceSearchableFields } from './constant';
+import { ServiceFilters } from './interface';
 
-export const insertEvent = async (data: PrismaEvent): Promise<PrismaEvent> => {
-    const result = await prisma.event.create({
+export const insertService = async (data: Service): Promise<Service> => {
+    const result = await prisma.service.create({
         data,
-        include: {
-            category: true,
-            reviewAndRatings: true,
-        },
     });
 
     return result;
 };
 
-export const findAllEvents = async (
-    filters: EventFilters,
+export const findAllServices = async (
+    filters: ServiceFilters,
     options: IPaginationOptions
-): Promise<IGenericResponse<PrismaEvent[]>> => {
+): Promise<IGenericResponse<Service[]>> => {
     const { limit, page, skip, sortBy, sortOrder } = calculatePagination(options);
     const { search, ...filterData } = filters;
 
@@ -33,7 +30,7 @@ export const findAllEvents = async (
 
     if (search) {
         andConditions.push({
-            OR: eventSearchableFields.map((field) => ({
+            OR: serviceSearchableFields.map((field) => ({
                 [field]: {
                     contains: search,
                     mode: 'insensitive',
@@ -52,15 +49,11 @@ export const findAllEvents = async (
         });
     }
 
-    const whereConditions: Prisma.EventWhereInput =
+    const whereConditions: Prisma.ServiceWhereInput =
         andConditions.length > 0 ? { AND: andConditions } : {};
 
-    const result = await prisma.event.findMany({
+    const result = await prisma.service.findMany({
         where: whereConditions,
-        include: {
-            category: true,
-            reviewAndRatings: true,
-        },
         skip,
         take: limit,
         orderBy:
@@ -71,7 +64,7 @@ export const findAllEvents = async (
                   },
     });
 
-    const total = await prisma.event.count({
+    const total = await prisma.service.count({
         where: whereConditions,
     });
 
@@ -85,29 +78,18 @@ export const findAllEvents = async (
     };
 };
 
-export const findEvent = async (id: string): Promise<PrismaEvent | null> => {
-    const result = await prisma.event.findUnique({
+export const findService = async (id: string): Promise<Service | null> => {
+    const result = await prisma.service.findUnique({
         where: { id },
-        include: {
-            category: true,
-            reviewAndRatings: true,
-        },
     });
 
     return result;
 };
 
-export const editEvent = async (
-    id: string,
-    payload: Partial<PrismaEvent>
-): Promise<PrismaEvent> => {
-    const result = await prisma.event.update({
+export const editService = async (id: string, payload: Partial<Service>): Promise<Service> => {
+    const result = await prisma.service.update({
         where: {
             id,
-        },
-        include: {
-            category: true,
-            reviewAndRatings: true,
         },
         data: payload,
     });
@@ -115,8 +97,8 @@ export const editEvent = async (
     return result;
 };
 
-export const removeEvent = async (id: string): Promise<PrismaEvent> => {
-    const result = await prisma.event.delete({
+export const removeService = async (id: string): Promise<Service> => {
+    const result = await prisma.service.delete({
         where: {
             id,
         },
