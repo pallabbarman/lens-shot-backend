@@ -109,9 +109,9 @@ enum Roles {
 }
 
 enum Prices {
-  STANDART @map("300")
-  PREMIUM  @map("450")
-  PLATINUM @map("750")
+  STANDART
+  PREMIUM
+  PLATINUM
 }
 
 enum BookingStatus {
