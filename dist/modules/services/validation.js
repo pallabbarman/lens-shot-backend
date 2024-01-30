@@ -13,15 +13,13 @@ exports.createServiceValidation = zod_1.default.object({
         description: zod_1.default.string({
             required_error: 'Description is required!',
         }),
-        photo: zod_1.default.string({
-            required_error: 'Photo is required!',
-        }),
+        photo: zod_1.default.string().array().nonempty({ message: 'Photo is required!' }),
     }),
 });
 exports.updateServiceValidation = zod_1.default.object({
     body: zod_1.default.object({
         title: zod_1.default.string().optional(),
         description: zod_1.default.string().optional(),
-        photo: zod_1.default.string().optional(),
+        photo: zod_1.default.string().array().optional(),
     }),
 });

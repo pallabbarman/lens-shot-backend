@@ -42,7 +42,7 @@ model Service {
   id          String   @id @default(uuid())
   title       String
   description String
-  photo       String
+  photo       String[]
   price       Prices   @default(STANDART)
   categoryId  String
   createdAt   DateTime @default(now())
