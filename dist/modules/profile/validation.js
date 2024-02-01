@@ -15,6 +15,5 @@ exports.updateProfileValidation = zod_1.default.object({
         role: zod_1.default.string().optional(),
         contactNo: zod_1.default.string().optional(),
         address: zod_1.default.string().optional(),
-        profileImg: zod_1.default.string().optional(),
     }),
 });

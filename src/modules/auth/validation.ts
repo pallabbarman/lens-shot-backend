@@ -21,7 +21,6 @@ export const createUserValidation = z.object({
             required_error: 'Contact number is required!',
         }),
         address: z.string().optional(),
-        profileImg: z.string().optional(),
     }),
 });
 

@@ -26,7 +26,6 @@ exports.createUserValidation = zod_1.default.object({
             required_error: 'Contact number is required!',
         }),
         address: zod_1.default.string().optional(),
-        profileImg: zod_1.default.string().optional(),
     }),
 });
 exports.loginValidation = zod_1.default.object({

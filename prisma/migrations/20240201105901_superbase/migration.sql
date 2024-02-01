@@ -38,7 +38,7 @@ CREATE TABLE "services" (
     "id" TEXT NOT NULL,
     "title" TEXT NOT NULL,
     "description" TEXT NOT NULL,
-    "photo" TEXT NOT NULL,
+    "photo" TEXT[],
     "price" "Prices" NOT NULL DEFAULT 'STANDART',
     "categoryId" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
