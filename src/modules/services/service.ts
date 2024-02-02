@@ -14,6 +14,9 @@ import { ServiceFilters } from './interface';
 export const insertService = async (data: Service): Promise<Service> => {
     const result = await prisma.service.create({
         data,
+        include: {
+            category: true,
+        },
     });
 
     return result;
@@ -54,6 +57,7 @@ export const findAllServices = async (
 
     const result = await prisma.service.findMany({
         where: whereConditions,
+        include: { category: true },
         skip,
         take: limit,
         orderBy:
@@ -81,6 +85,7 @@ export const findAllServices = async (
 export const findService = async (id: string): Promise<Service | null> => {
     const result = await prisma.service.findUnique({
         where: { id },
+        include: { category: true },
     });
 
     return result;
@@ -91,6 +96,7 @@ export const editService = async (id: string, payload: Partial<Service>): Promis
         where: {
             id,
         },
+        include: { category: true },
         data: payload,
     });
 

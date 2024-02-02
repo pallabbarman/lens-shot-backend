@@ -64,6 +64,9 @@ var insertService = function (data) { return __awaiter(void 0, void 0, void 0, f
         switch (_a.label) {
             case 0: return [4 /*yield*/, prisma_1.default.service.create({
                     data: data,
+                    include: {
+                        category: true,
+                    },
                 })];
             case 1:
                 result = _a.sent();
@@ -109,6 +112,7 @@ var findAllServices = function (filters, options) { return __awaiter(void 0, voi
                 whereConditions = andConditions.length > 0 ? { AND: andConditions } : {};
                 return [4 /*yield*/, prisma_1.default.service.findMany({
                         where: whereConditions,
+                        include: { category: true },
                         skip: skip,
                         take: limit,
                         orderBy: sortBy && sortOrder
@@ -141,6 +145,7 @@ var findService = function (id) { return __awaiter(void 0, void 0, void 0, funct
         switch (_a.label) {
             case 0: return [4 /*yield*/, prisma_1.default.service.findUnique({
                     where: { id: id },
+                    include: { category: true },
                 })];
             case 1:
                 result = _a.sent();
@@ -157,6 +162,7 @@ var editService = function (id, payload) { return __awaiter(void 0, void 0, void
                     where: {
                         id: id,
                     },
+                    include: { category: true },
                     data: payload,
                 })];
             case 1:

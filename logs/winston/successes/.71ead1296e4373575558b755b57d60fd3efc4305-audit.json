@@ -6,24 +6,9 @@
     "auditLog": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\successes\\.71ead1296e4373575558b755b57d60fd3efc4305-audit.json",
     "files": [
         {
-            "date": 1706341486606,
-            "name": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\successes\\success-2024-01-27-13.log",
-            "hash": "f0b4e36a5659c7f9b74126a1cc479187617b70f263bb9f16bb9ff95e3cdf0f2b"
-        },
-        {
-            "date": 1706371590227,
-            "name": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\successes\\success-2024-01-27-22.log",
-            "hash": "b87b25b02e5949535a3a3ee31380d4368cc13d811af15df6657acd1b4fa8f11d"
-        },
-        {
-            "date": 1706625624737,
-            "name": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\successes\\success-2024-01-30-20.log",
-            "hash": "3a9af89fe229e3d1d85d26eb287c86999ad0d1c9a4efd1413f8ac8b087d9da62"
-        },
-        {
-            "date": 1706628149644,
-            "name": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\successes\\success-2024-01-30-21.log",
-            "hash": "687969148079e6dcca455ffa6d1ea5bad74ce69a54f70e96dda64102723c0d3b"
+            "date": 1706862362260,
+            "name": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\successes\\success-2024-02-02-14.log",
+            "hash": "66394579a4cde1ce9e79a4a583bab122bcfa65f1b05076d2fc8d8eac31bf5767"
         }
     ],
     "hashType": "sha256"

@@ -6,24 +6,9 @@
     "auditLog": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\errors\\.7a09eb4aaac42d03da7813c726e77ae54acbe6cd-audit.json",
     "files": [
         {
-            "date": 1706341486612,
-            "name": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\errors\\error-2024-01-27-13.log",
-            "hash": "7c3f1f606b53892aeeaac7f21a59d7201f719cc832fb64001b73cb5fc7849da3"
-        },
-        {
-            "date": 1706371590249,
-            "name": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\errors\\error-2024-01-27-22.log",
-            "hash": "d5070c478dca7b60f6437e785c395e1d33e1932e37bf33525f164a3d87b8b695"
-        },
-        {
-            "date": 1706625624760,
-            "name": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\errors\\error-2024-01-30-20.log",
-            "hash": "2d7116198179c69e685e7072200bfc349a5725f51cc377ee024a3873144f13b4"
-        },
-        {
-            "date": 1706628149654,
-            "name": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\errors\\error-2024-01-30-21.log",
-            "hash": "ed5cb71ea31e0afc49aa179731d6862d6c64106e133601116579ba6841a06280"
+            "date": 1706862362280,
+            "name": "D:\\Web Development\\Full Stack\\Lens\\server\\logs\\winston\\errors\\error-2024-02-02-14.log",
+            "hash": "a580f66785e5b03ad048e62cc6c70d19adff789423ff84d481821982e7929209"
         }
     ],
     "hashType": "sha256"
