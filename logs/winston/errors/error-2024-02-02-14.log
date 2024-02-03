@@ -4,3 +4,11 @@ Fri Feb 02 2024 14:26:26 [debug] error: globalErrorHandler ~ You are not authori
 Fri Feb 02 2024 14:26:35 [debug] error: globalErrorHandler ~ You are not authorized!
 Fri Feb 02 2024 14:26:51 [debug] error: globalErrorHandler ~ You are not authorized!
 Fri Feb 02 2024 14:27:3 [debug] error: globalErrorHandler ~ You are not authorized!
+Fri Feb 02 2024 14:27:27 [debug] error: globalErrorHandler ~ You are not authorized!
+Fri Feb 02 2024 14:27:33 [debug] error: globalErrorHandler ~ You are not authorized!
+Fri Feb 02 2024 14:28:17 [debug] error: globalErrorHandler ~ You are not authorized!
+Fri Feb 02 2024 14:29:16 [debug] error: globalErrorHandler ~ 
+Invalid `prisma.service.create()` invocation:
+
+
+Foreign key constraint failed on the field: `services_categoryId_fkey (index)`

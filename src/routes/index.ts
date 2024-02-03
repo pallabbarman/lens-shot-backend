@@ -6,6 +6,7 @@ import categoryRoutes from 'modules/category/route';
 import commentRoutes from 'modules/comment/route';
 import contactRoutes from 'modules/contact/route';
 import feedbackRoutes from 'modules/feedback/route';
+import portfolioRoutes from 'modules/portfolio/route';
 import profileRoutes from 'modules/profile/route';
 import serviceRoutes from 'modules/services/route';
 import userRoutes from 'modules/users/route';
@@ -52,6 +53,10 @@ const moduleRoutes = [
     {
         path: '/services',
         route: serviceRoutes,
+    },
+    {
+        path: '/portfolio',
+        route: portfolioRoutes,
     },
 ];
 

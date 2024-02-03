@@ -11,9 +11,10 @@ var route_4 = __importDefault(require("../modules/category/route"));
 var route_5 = __importDefault(require("../modules/comment/route"));
 var route_6 = __importDefault(require("../modules/contact/route"));
 var route_7 = __importDefault(require("../modules/feedback/route"));
-var route_8 = __importDefault(require("../modules/profile/route"));
-var route_9 = __importDefault(require("../modules/services/route"));
-var route_10 = __importDefault(require("../modules/users/route"));
+var route_8 = __importDefault(require("../modules/portfolio/route"));
+var route_9 = __importDefault(require("../modules/profile/route"));
+var route_10 = __importDefault(require("../modules/services/route"));
+var route_11 = __importDefault(require("../modules/users/route"));
 var router = (0, express_1.Router)();
 var moduleRoutes = [
     {
@@ -22,7 +23,7 @@ var moduleRoutes = [
     },
     {
         path: '/users',
-        route: route_10.default,
+        route: route_11.default,
     },
     {
         path: '/categories',
@@ -34,7 +35,7 @@ var moduleRoutes = [
     },
     {
         path: '/profile',
-        route: route_8.default,
+        route: route_9.default,
     },
     {
         path: '/contact',
@@ -54,7 +55,11 @@ var moduleRoutes = [
     },
     {
         path: '/services',
-        route: route_9.default,
+        route: route_10.default,
+    },
+    {
+        path: '/portfolio',
+        route: route_8.default,
     },
 ];
 moduleRoutes.forEach(function (route) { return router.use(route.path, route.route); });
